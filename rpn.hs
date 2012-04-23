@@ -217,7 +217,7 @@ parseArgs argv = case getOpt Permute flags argv of
 
 parseArgs' :: Flags -> [OptDescr a] -> t -> String -> Integer -> IO (Flags, t)
 parseArgs' args descriptors expression header precision
-  | Help `elem` args      = do  putStrLn (usageInfo header descriptors)
+  | Help `elem` args      = do  putStr (usageInfo header descriptors)
                                 exitSuccess
   | Version `elem` args   = do  putStrLn version
                                 exitSuccess
